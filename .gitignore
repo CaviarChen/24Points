@@ -1,0 +1,29 @@
+####  OSX  ####
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+####  Win  ####
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+
+
+# 忽略Delphi 输出文件夹
+Win32
+Win64
+OSX32
+Android
+IOS
+
+#忽略Delphi历史备份文件夹
+__history
