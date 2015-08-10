@@ -1,0 +1,25 @@
+inherited Form1_iPhone47in: TForm1_iPhone47in
+  ClientHeight = 647
+  ClientWidth = 375
+  DesignerMasterStyle = 0
+  inherited TabControl1: TTabControl
+    Size.Width = 375.000000000000000000
+    Size.Height = 647.000000000000000000
+    inherited TabItem1: TTabItem
+      Size.Width = 125.000000000000000000
+    end
+    inherited TabItem2: TTabItem
+      Size.Width = 125.000000000000000000
+    end
+    inherited TabItem3: TTabItem
+      Size.Width = 125.000000000000000000
+      inherited Memo2: TMemo
+        Viewport.Width = 265.000000000000000000
+        Viewport.Height = 281.000000000000000000
+      end
+    end
+  end
+  inherited Panel9: TPanel
+    Visible = False
+  end
+end
