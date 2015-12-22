@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
   FMX.TabControl, FMX.Layouts, FMX.Objects,find, FMX.Ani, FMX.Memo,
-  FMX.ScrollBox, FMX.Controls.Presentation, FMX.Advertising;
+  FMX.ScrollBox, FMX.Controls.Presentation;
 
 type
   TForm_main = class(TForm)
@@ -57,6 +57,24 @@ type
     Layout2: TLayout;
     Layout3: TLayout;
     StyleBook1: TStyleBook;
+    Layout4: TLayout;
+    CalloutPanel1: TCalloutPanel;
+    Image1: TImage;
+    Panel9: TPanel;
+    Text9: TText;
+    Text10: TText;
+    Text11: TText;
+    Button_vbox: TButton;
+    Image_vbox: TImage;
+    Text_vbox: TText;
+    Button_github: TButton;
+    Image_github: TImage;
+    Text_github: TText;
+    Button_osc: TButton;
+    Image_osc: TImage;
+    Text_osc: TText;
+    Text13: TText;
+    Text12: TText;
     procedure Button_ShowAnswerClick(Sender: TObject);
     procedure Button_GenerateQuestionClick(Sender: TObject);
     procedure NumberButtonClick(Sender: TObject);
@@ -64,6 +82,9 @@ type
     procedure Button_ansClick(Sender: TObject);
     procedure FloatAnimation_ansFinish(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure Button_vboxClick(Sender: TObject);
+    procedure Button_githubClick(Sender: TObject);
+    procedure Button_oscClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -74,6 +95,24 @@ var
   Form_main: TForm_main;
 
 implementation
+
+uses
+
+ IdURI,
+{$IFDEF ANDROID}
+  Androidapi.Helpers, FMX.Helpers.Android, Androidapi.JNI.GraphicsContentViewText,
+  Androidapi.JNI.App, Androidapi.JNI.Net, Androidapi.JNI.JavaTypes
+{$ENDIF ANDROID}
+
+{$IFDEF MSWINDOWS}
+  Winapi.ShellAPI, Winapi.Windows
+{$ENDIF MSWINDOWS}
+
+{$IFDEF IOS}
+    Macapi.Helpers, iOSapi.Foundation, FMX.Helpers.iOS
+{$ENDIF IOS}
+    ;
+
 
 var P1_n:array[1..4]of integer;
     P1_ans:string;
@@ -114,6 +153,36 @@ begin
   end;
 end;
 
+
+procedure OpenUrl(_url:string);
+var
+{$IFDEF ANDROID}
+  Intent: JIntent;
+{$ENDIF ANDROID}
+
+{$IFDEF IOS}
+  NSU: NSUrl;
+{$ENDIF IOS}
+begin
+{$IFDEF MSWINDOWS}
+  ShellExecute(0, 'OPEN', PChar(_url), '', '', SW_SHOWNORMAL);
+{$ENDIF MSWINDOWS}
+
+{$IFDEF IOS}
+  NSU   := StrToNSUrl(TIdURI.URLEncode(_url));
+  if SharedApplication.canOpenURL(NSU) then
+  begin
+    SharedApplication.openUrl(NSU);
+  end;
+{$ENDIF IOS}
+
+{$IFDEF ANDROID}
+  Intent := TJIntent.Create;
+  Intent.setAction(TJIntent.JavaClass.ACTION_VIEW);
+  Intent.setData(StrToJURI(_url));
+  TAndroidHelper.Activity.startActivity(Intent);
+{$ENDIF ANDROID}
+end;
 //-------------------------------------------------------------------------------
 
 procedure TForm_main.Button_GenerateQuestionClick(Sender: TObject);
@@ -143,10 +212,10 @@ end;
 
 procedure TForm_main.Button_DeleteClick(Sender: TObject);
 begin
-  if p=1 then begin Text1.font.Size:=50;Text1.Text:='?'; end;
-  if p=2 then begin Text2.font.Size:=50;Text2.Text:='?'; end;
-  if p=3 then begin Text3.font.Size:=50;Text3.Text:='?'; end;
-  if p=4 then begin Text4.font.Size:=50;Text4.Text:='?'; end;
+  if p=1 then SetText(0,Text1);
+  if p=2 then SetText(0,Text2);
+  if p=3 then SetText(0,Text3);
+  if p=4 then SetText(0,Text4);
   p:=p-1;
     if p=0 then Form_main.Button_Delete.Enabled:=False
       else Form_main.Button_Delete.Enabled:=True;
@@ -215,6 +284,21 @@ procedure TForm_main.FormCreate(Sender: TObject);
 begin
   FMX.Types.GlobalDisableFocusEffect := True;
   TabControl1.Index := 0;
+end;
+
+procedure TForm_main.Button_vboxClick(Sender: TObject);
+begin
+  OpenUrl('http://vbox.vlabpro.com/');
+end;
+
+procedure TForm_main.Button_githubClick(Sender: TObject);
+begin
+  OpenUrl('https://github.com/CaviarChen/24Points');
+end;
+
+procedure TForm_main.Button_oscClick(Sender: TObject);
+begin
+  OpenUrl('http://git.oschina.net/CaviarChen/x24Points');
 end;
 
 end.
