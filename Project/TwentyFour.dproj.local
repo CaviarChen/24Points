@@ -1,16 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>2014/01/21 14:53:48.000.722,=C:\Users\Caviar\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2014/01/21 14:54:15.000.750,C:\Users\Caviar\Documents\RAD Studio\Projects\Unit1.fmx=D:\ios\24\Unit1.fmx</Transaction>
-    <Transaction>2014/01/21 14:54:15.000.750,C:\Users\Caviar\Documents\RAD Studio\Projects\Unit1.pas=D:\ios\24\Unit1.pas</Transaction>
-    <Transaction>2014/01/21 14:54:17.000.028,C:\Users\Caviar\Documents\RAD Studio\Projects\Project2.dproj=D:\ios\24\Project2.dproj</Transaction>
-    <Transaction>2014/01/21 14:55:01.000.603,=D:\ios\24\Unit2.pas</Transaction>
-    <Transaction>2014/01/21 14:55:08.000.810,D:\ios\24\Unit2.pas=D:\ios\24\find24.pas</Transaction>
-    <Transaction>2014/01/21 17:57:14.000.355,=D:\ios\24\Unit2.pas</Transaction>
-    <Transaction>2014/01/21 17:57:22.000.572,D:\ios\24\Find.pas=D:\ios\24\Unit2.pas</Transaction>
-    <Transaction>2014/01/22 13:30:55.000.890,D:\ios\24\Project2.dproj=D:\ios\24\aaa.dproj</Transaction>
-    <Transaction>2014/01/22 13:31:18.000.527,D:\ios\24\aaa.dproj=D:\ios\24\TwentyFour.dproj</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.890,D:\ios\24\aaa.dproj=D:\ios\24\Project2.dproj</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.028,D:\ios\24\Project2.dproj=C:\Users\Caviar\Documents\RAD Studio\Projects\Project2.dproj</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.527,D:\ios\24\TwentyFour.dproj=D:\ios\24\aaa.dproj</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.750,D:\ios\24\Unit1.pas=C:\Users\Caviar\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.810,D:\ios\24\find24.pas=D:\ios\24\Unit2.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.355,=D:\ios\24\Unit2.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.572,D:\ios\24\Unit2.pas=D:\ios\24\Find.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.603,=D:\ios\24\Unit2.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.722,=C:\Users\Caviar\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.750,D:\ios\24\Unit1.fmx=C:\Users\Caviar\Documents\RAD Studio\Projects\Unit1.fmx</Transaction>
   </Transactions>
 	<BT_BuildType>AppStore</BT_BuildType>
+	<MobileDevice>iPad-iOSSimulator</MobileDevice>
+	<ActiveMobileDevice>
+		<PCCMBA iOSSimulator="_iossimulator_855F49FA-B1C4-4A7B-A986-2FD4279747EB" iOSDevice32="_iosdevice_aef3bc3c62a79b3121dc13622417002f14ac0bd7" iOSDevice64="_iosdevice_aef3bc3c62a79b3121dc13622417002f14ac0bd7"/>
+	</ActiveMobileDevice>
 </BorlandProject>
