@@ -1,5 +1,5 @@
 # 二十四点 [24Points]
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
+[![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
 >  由于苹果开发者账户过期，这个app已经从 App store 移除，短期内我也不会继续维护了。  
 
 >This app is no longer under maintenance.  
