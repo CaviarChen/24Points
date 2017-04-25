@@ -16,8 +16,6 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 
-
-
 # 忽略Delphi 输出文件夹
 Win32
 Win64
@@ -27,3 +25,8 @@ IOS
 
 #忽略Delphi历史备份文件夹
 __history
+
+#Delphi cache files
+*.dproj.local
+*.identcache
+*.stat
